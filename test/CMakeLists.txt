@@ -1,6 +1,4 @@
 option(GLM_QUIET "No CMake Message" OFF)
-option(BUILD_SHARED_LIBS "Build shared library" ON)
-option(BUILD_STATIC_LIBS "Build static library" ON)
 option(GLM_TEST_ENABLE_CXX_98 "Enable C++ 98" OFF)
 option(GLM_TEST_ENABLE_CXX_11 "Enable C++ 11" OFF)
 option(GLM_TEST_ENABLE_CXX_14 "Enable C++ 14" OFF)
@@ -231,7 +229,6 @@ function(glmCreateTestGTC NAME)
 	add_test(
 		NAME ${SAMPLE_NAME}
 		COMMAND $<TARGET_FILE:${SAMPLE_NAME}> )
-	target_link_libraries(${SAMPLE_NAME} PRIVATE glm::glm)
 endfunction()
 
 if(GLM_TEST_ENABLE)
